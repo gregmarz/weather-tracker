@@ -1,0 +1,49 @@
+:root {
+
+}
+
+* {
+
+}
+
+header {
+    background-color: #343A40;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+}
+
+#searchBar {
+    margin-bottom: 10px;
+}
+
+#weatherDisplay {
+    margin-bottom: 30px;
+}
+
+#weatherDisplay div {
+    padding: 20px;
+}
+
+#citySearch {
+    margin-right: 30px;
+    background-color: rgb(218, 218, 218);
+    height: fit-content;
+    padding: 1%;
+}
+
+#FiveDayDisplay {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+#FiveDayDisplay div {
+    padding: 7px;
+    background-color: #007BFF;
+    margin: 3px;
+}
