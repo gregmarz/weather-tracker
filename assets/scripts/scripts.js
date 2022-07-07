@@ -74,12 +74,19 @@ function requestTwo(latitude,longitude) {
             temp = data.current.temp;
             humidity = data.current.humidity;
             wind_speed = data.current.wind_speed;
-            uvi = data.current.uvi;
+            uvi = data.current.uvi * 10;
             cityName.textContent = input;
             cityTemp.textContent = "Temperature: " + temp;
             cityHumid.textContent = "Humidity: " + humidity;
             cityWind.textContent = "Wind Speed: " + wind_speed;
             cityUV.textContent = "UV Index: " + uvi;
+            if (uvi > 8) {
+                cityUV.setAttribute("style", "background-color:red");
+            } else if (uvi > 5) {
+                cityUV.setAttribute("style", "background-color:orange")
+            } else {
+                cityUV.setAttribute("style", "background-color:green")
+            }
         })
 }
 
