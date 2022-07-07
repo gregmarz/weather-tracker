@@ -10,7 +10,22 @@ var cityHumid = document.getElementById("cityHumid");
 var cityWind = document.getElementById("cityWind");
 var cityUV = document.getElementById("cityUV");
 
-var input = [];
+var savedCities = [];
+
+var temp1 = document.getElementById("temp1");
+var temp2 = document.getElementById("temp2");
+var temp3 = document.getElementById("temp3");
+var temp4 = document.getElementById("temp4");
+var temp5 = document.getElementById("temp5");
+
+var hum1 = document.getElementById("hum1");
+var hum2 = document.getElementById("hum2");
+var hum3 = document.getElementById("hum3");
+var hum4 = document.getElementById("hum4");
+var hum5 = document.getElementById("hum5");
+
+
+var input;
 var latitude = 0;
 var longitude = 0;
 
@@ -87,9 +102,18 @@ function requestTwo(latitude,longitude) {
             } else {
                 cityUV.setAttribute("style", "background-color:green")
             }
+            temp1.textContent = "Temperature: " + data.daily[1].temp.day;
+            hum1.textContent = "Humidity: " + data.daily[1].humidity;
+            temp2.textContent = "Temperature: " + data.daily[2].temp.day;
+            hum2.textContent = "Humidity: " + data.daily[2].humidity;
+            temp3.textContent = "Temperature: " + data.daily[3].temp.day;
+            hum3.textContent = "Humidity: " + data.daily[3].humidity;
+            temp4.textContent = "Temperature: " + data.daily[4].temp.day;
+            hum4.textContent = "Humidity: " + data.daily[4].humidity;
+            temp5.textContent = "Temperature: " + data.daily[5].temp.day;
+            hum5.textContent = "Humidity: " + data.daily[5].humidity;
         })
 }
-
 
 
 
