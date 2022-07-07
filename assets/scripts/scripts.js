@@ -24,6 +24,11 @@ var hum3 = document.getElementById("hum3");
 var hum4 = document.getElementById("hum4");
 var hum5 = document.getElementById("hum5");
 
+var con1 = document.getElementById("con1");
+var con2 = document.getElementById("con2");
+var con3 = document.getElementById("con3");
+var con4 = document.getElementById("con4");
+var con5 = document.getElementById("con5");
 
 var input;
 var latitude = 0;
@@ -104,14 +109,19 @@ function requestTwo(latitude,longitude) {
             }
             temp1.textContent = "Temperature: " + data.daily[1].temp.day;
             hum1.textContent = "Humidity: " + data.daily[1].humidity;
+            con1.textContent = "Condition: " + data.daily[1].weather[0].description;
             temp2.textContent = "Temperature: " + data.daily[2].temp.day;
             hum2.textContent = "Humidity: " + data.daily[2].humidity;
+            con2.textContent = "Condition: " + data.daily[2].weather[0].description;
             temp3.textContent = "Temperature: " + data.daily[3].temp.day;
             hum3.textContent = "Humidity: " + data.daily[3].humidity;
+            con3.textContent = "Condition: " + data.daily[3].weather[0].description;
             temp4.textContent = "Temperature: " + data.daily[4].temp.day;
             hum4.textContent = "Humidity: " + data.daily[4].humidity;
+            con4.textContent = "Condition: " + data.daily[4].weather[0].description;
             temp5.textContent = "Temperature: " + data.daily[5].temp.day;
             hum5.textContent = "Humidity: " + data.daily[5].humidity;
+            con5.textContent = "Condition: " + data.daily[5].weather[0].description;
         })
 }
 
