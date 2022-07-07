@@ -82,6 +82,10 @@ function requestOne() {
             cityStore()
             return requestTwo(latitude, longitude);
         })
+        .catch(function(error) {
+            console.log(error)
+            return
+        })
 }
 
 function requestTwo(latitude,longitude) {
@@ -97,7 +101,7 @@ function requestTwo(latitude,longitude) {
             humidity = data.current.humidity;
             wind_speed = data.current.wind_speed;
             uvi = data.current.uvi * 10;
-            cityName.textContent = input;
+            cityName.textContent = input.toUpperCase();
             cityTemp.textContent = "Temperature: " + temp;
             cityHumid.textContent = "Humidity: " + humidity;
             cityWind.textContent = "Wind Speed: " + wind_speed;
@@ -131,3 +135,4 @@ function cityStore() {
     var storage = JSON.stringify(savedCities);
     localStorage.setItem("cities",storage);
 }
+

@@ -49,3 +49,8 @@ main {
     background-color: #007BFF;
     margin: 3px;
 }
+
+img {
+    width: 30px;
+    height: 30px;
+}
