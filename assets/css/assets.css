@@ -14,7 +14,13 @@ main {
 }
 
 #cityList {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+}
+
+#cityList button{
+    margin-bottom: 5px;
 }
 
 #weatherDisplay {

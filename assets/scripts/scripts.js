@@ -53,12 +53,12 @@ $("#searchButton").click(function(event) {
 })
 
 function addCity() {
-    var cityNewCont = document.createElement("div")
-    cityList.appendChild(cityNewCont);
-    var cityNew = document.createElement("p")
-    cityNew.innerHTML = input;
-    cityNew.setAttribute("class", "card")
-    cityNewCont.appendChild(cityNew);
+    var cityAdd = document.createElement("button");
+    cityAdd.textContent = input;
+    cityList.appendChild(cityAdd);
+    cityAdd.addEventListener("click",function() {
+        requestOne(addCity.textContent);
+    })
 }
 
 function requestOne() {
@@ -77,7 +77,9 @@ function requestOne() {
             latitude = data.coord.lat;
             longitude = data.coord.lon;
             console.log(latitude,longitude);
+            savedCities.push(input);
             addCity();
+            cityStore()
             return requestTwo(latitude, longitude);
         })
 }
@@ -125,11 +127,7 @@ function requestTwo(latitude,longitude) {
         })
 }
 
-
-
-
-
-
-
-
-
+function cityStore() {
+    var storage = JSON.stringify(savedCities);
+    localStorage.setItem("cities",storage);
+}
